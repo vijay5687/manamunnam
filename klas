@@ -14,3 +14,14 @@ postgreSQLConnection    = alchemyEngine.connect();
 postgreSQLTable         = "users";
 
 df2.to_sql('users', postgreSQLConnection, if_exists='replace');
+
+
+
+import re
+def fun(row):
+    re1='^.*(UUID).*(NM)|UUID.$'
+    re2='that'
+    if re.search("(%s|%s)" % (re1, re2), row,re.I):
+        return True
+    else:
+        return False
