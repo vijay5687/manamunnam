@@ -1,0 +1,16 @@
+import psycopg2 as pg
+import pandas.io.sql as psql
+import pandas as pd
+
+with pg.connect(host="localhost",dbname="postgres",user="postgres" ,password="qazwsx12") as conn:
+     df1 = pd.read_sql_query('select * from users',con=conn)
+print(df1)
+
+from sqlalchemy import create_engine
+alchemyEngine           = create_engine('postgresql+psycopg2://postgres:qazwsx12@127.0.0.1/postgres', pool_recycle=3600);
+
+postgreSQLConnection    = alchemyEngine.connect();
+
+postgreSQLTable         = "users";
+
+df2.to_sql('users', postgreSQLConnection, if_exists='replace');
