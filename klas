@@ -7,7 +7,7 @@ with pg.connect(host="localhost",dbname="postgres",user="postgres" ,password="qa
 print(df1)
 
 from sqlalchemy import create_engine
-alchemyEngine           = create_engine('postgresql+psycopg2://postgres:qazwsx12@127.0.0.1/postgres', pool_recycle=3600);
+alchemyEngine           = create_engine('postgresql+psycopg2://postgres:hhjjjk@127.0.0.1/postjjres', pool_recycle=3600);
 
 postgreSQLConnection    = alchemyEngine.connect();
 
