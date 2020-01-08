@@ -25,3 +25,14 @@ def fun(row):
         return True
     else:
         return False
+
+import re
+def fungh(row):
+    row1=str(row)
+    re1='United States'
+    re2='India'
+    if re.search("(%s|%s)" % (re1, re2),row,re.I):
+        return True
+    else:
+        return False
+df['Main_Country13']=df['Main_Country'].apply(lambda x: fungh(x))
